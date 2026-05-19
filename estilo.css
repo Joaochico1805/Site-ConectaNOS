@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+/* FORMATAÇÕES GERAIS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+body, html{
+    background: #f5f6f8;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 1em;
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+.botao{
+    margin: 0;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 0.8em;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: rgba(45, 48, 50, 0.8);
+    border: 1px solid #f7b50048;
+}
+
+.botao:hover{
+    background: #f7b5009b;
+    color: #0f172a;
+}
+
+.nome{
+    color: #f7b600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+/* CABEÇALHO */
+
+#cabecalho{
+    background: rgba(15, 23, 42, 0.3);
+    backdrop-filter: saturate(1.05) blur(6px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+#container-cabecalho{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+#area-logo{
+    width: 40px;
+}
+#area-menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 0.8em;
+    letter-spacing: .09em;
+    margin: 5px 0;
+}
+#area-menu ul a{
+    position: relative;
+    padding: 5px;
+}   
+#area-menu ul a:hover{
+    color: #f7b600;
+}
+#area-menu ul a::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #f7b600;
+    transition: width 0.5s ease;
+}
+#area-menu ul a:hover:after{
+    width: 100%;
+}
+
+
+/* INICIO*/
+
+#inicio{
+    min-height: 100vh;
+    background-image: url(img/fundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container-inicio{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+#area-img-inicio{
+    width: 250px;
+    animation: flutuar 5s ease-in-out infinite;
+}
+#area-texto-inicio{
+    text-align: center;
+}
+
+/* SOBRE */
+
+#sobre{
+    display: flex;
+}
+#container-sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+#area-texto-sobre{
+    width: 100%;
+    text-align: start;
+    border-radius: 20px;
+    padding: 40px 50px;
+    color: #000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
+}
+#area-texto-sobre p, #area-texto-sobre li{
+    margin: 20px 0;
+    color: #666;
+}
+
+/* EQUIPE */
+
+#equipe{
+    min-height: 100vh;
+    background-image: url(img/fundo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#container-equipe{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10em;
+}
+.membro-equipe{
+    min-width: 200px;
+    width: 200px;
+    text-align: center;
+}
+.membro-equipe h3{
+    margin: 10px;
+    font-size: 1.5em;
+    line-height: 1;
+}
+.membro-equipe span{
+    color: #f7b600;
+}
+.membro-equipe img{
+    border-radius: 50%;box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(133, 133, 133, 0.5);
+}
+
+/* PESQUISA */
+
+#pesquisa{
+    background: #fff;
+}
+#container-pesquisa{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.conteudo-pesquisa{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    margin: 10px;
+}
+.conteudo-pesquisa img{
+    transition: all 1s ease;
+    object-fit: cover;
+}
+.conteudo-pesquisa:hover img{
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    transform: scale(1.2);
+}
+.conteudo-pesquisa div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.conteudo-pesquisa h3{
+    font-size: 1.5rem;
+}
+.conteudo-pesquisa p{
+    color: #d6d7d7e7;
+}
+
+/* PROJETOS */
+
+#projetos{
+    display: flex;
+    align-items: center;
+}
+
+#container-projetos{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    overflow: hidden;
+}
+
+.card-list .card-item{
+    list-style: none;
+}
+
+.card-list .card-item .card-link{
+    user-select: none;
+    display: block;
+    background: #fff;
+    padding: 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:active{
+    cursor: grabbing;
+}
+
+.card-list .card-item .card-link:hover{
+    border-color: #f7b600;
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge{
+    background: #dde4ff;
+    color: #5372f0;
+    margin: 16px 0 18px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .badge.designer{
+    color: #b22485;
+    background: #f7dff5;
+}
+.card-list .card-link .badge.developer{
+    color: #b25a2b;
+    background: #ffe3d2;
+}
+.card-list .card-link .badge.marketer{
+    color: #205c20;
+    background: #d6f8d6;
+}
+.card-list .card-link .badge.gamer{
+    color: #856404;
+    background: #fff3cd;
+}
+
+.card-list .card-link .card-title{
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button{
+    height: 35px;
+    width: 35px;
+    color: #f7b600;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #f7b600;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button{
+    color: #fff;
+    background: #f7b600;
+}
+
+.card-wrapper .swiper-pagination-bullet{
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: #f7b600;
+}
+
+.card-wrapper .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button{
+    color: #f7b600;
+}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets{
+    bottom: 100px;
+}
+
+/* RODAPÉ */
+
+#rodape{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #e2e8f068 ;
+    border-bottom: 2px solid #e2e8f068 ;
+    background: #0f172a;
+}
+#container-rodape{
+    background: #0f172a;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+    gap: 1em;
+}
+.caixa-rodape-brand{
+    max-width: 500px;
+}
+.caixa-rodape-brand img{
+    width: 40px;
+}
+.caixa-rodape-contato{
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.caixa-rodape-contato a:hover{
+    color: #f7b600;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        font-size: 0.8rem;
+    }
+    #cabecalho .container{
+        width: 100%;
+    }
+    #area-logo{
+        display: none;
+    }
+    #area-menu ul{
+        gap: 5px;
+    }
+    #inicio, #equipe{
+        background-attachment: local;
+    } 
+    #area-img-inicio{
+        width: 200px;
+    }
+    #area-texto-sobre{
+        text-align: start;
+    }
+    #container-pesquisa{
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .conteudo-pesquisa{
+        width: 100%;   
+    }
+    #container-equipe{
+        gap: 5em;
+    }
+    .card-wrapper{
+        margin: 0 0 25px;
+    }
+
+    .card-wrapper .swiper-slide-button{
+        display: none;
+    }
+}
